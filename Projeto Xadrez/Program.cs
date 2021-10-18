@@ -20,9 +20,16 @@ namespace Projeto_Xadrez
 
                     Screen.ShowGameBoard(chessGame.GameBoard);
 
+                    Console.WriteLine();
                     Console.Write("Origem: ");
                     Position original = Screen.ReadPositionChess().ToPosition();
 
+                    bool[,] avaliablePosition = chessGame.GameBoard.getPiece(original).PossibleMovements();
+
+                    Console.Clear();
+                    Screen.ShowGameBoard(chessGame.GameBoard, avaliablePosition);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Position destiny = Screen.ReadPositionChess().ToPosition();
 

@@ -13,14 +13,14 @@ namespace Projeto_Xadrez.GameBoardContainer
 
         public Position(int line, int column)
         {
-            Line = line;
-            Column = column;
+            this.Line = line;
+            this.Column = column;
         }
 
         public void DefineValues(int line, int column)
         {
-            Line = line;
-            Column = column;
+            this.Line = line;
+            this.Column = column;
 
         }
 

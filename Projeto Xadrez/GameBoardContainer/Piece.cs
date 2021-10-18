@@ -15,7 +15,8 @@ namespace Projeto_Xadrez.GameBoardContainer
         public Piece() { }
 
         public Piece(Color color, GameBoard gameBoard) {
-           
+            this.Position = null;
+            this.AmountOfMoves = 0;
             Color = color;
             GameBoard = gameBoard;
         } 

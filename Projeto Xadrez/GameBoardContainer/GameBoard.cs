@@ -21,7 +21,8 @@ namespace Projeto_Xadrez.GameBoardContainer
             Pieces = new Piece[lines, columns];
         }
 
-        public bool PiecePosition(Position position) {
+        public bool PiecePosition(Position position)
+        {
             PositionValid(position);
             return getPiece(position) != null;
         }
@@ -31,7 +32,7 @@ namespace Projeto_Xadrez.GameBoardContainer
             return Pieces[line, column];
         }
 
-        public Piece getPiece(Position position)
+        public Piece getPiece(Position position) // POSSIVEL ERRO
         {
             CheckPosition(position);
             return Pieces[position.Line, position.Column];
@@ -39,7 +40,8 @@ namespace Projeto_Xadrez.GameBoardContainer
 
         public void SetPiece(Piece piece, Position position)
         {
-            if (PiecePosition(position)) {
+            if (PiecePosition(position))
+            {
                 throw new GameBoardException("Já existe a peça");
             }
             Pieces[position.Line, position.Column] = piece;
@@ -69,7 +71,7 @@ namespace Projeto_Xadrez.GameBoardContainer
 
         public bool PositionValid(Position position)
         {
-            if (position.Line < 0 || position.Line > Lines || position.Column < 0 || position.Column > Columns)
+            if (position.Line < 0 || position.Line >= Lines || position.Column < 0 || position.Column >= Columns)
             {
                 return false;
             }

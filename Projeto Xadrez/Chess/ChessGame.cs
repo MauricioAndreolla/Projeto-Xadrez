@@ -23,8 +23,9 @@ namespace Projeto_Xadrez.Chess
         private void putPieces()
         {
 
-            GameBoard.SetPiece(new King(GameBoard, Color.Black), new PositionChess('c', 1).ToPosition());
-            GameBoard.SetPiece(new King(GameBoard, Color.White), new PositionChess('d', 1).ToPosition());
+            GameBoard.SetPiece(new King(GameBoard, Color.Black), new PositionChess('c', 2).ToPosition());
+            GameBoard.SetPiece(new Rook(GameBoard, Color.Black), new PositionChess('a', 1).ToPosition());
+
 
         }
 

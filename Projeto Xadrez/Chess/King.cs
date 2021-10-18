@@ -24,13 +24,13 @@ namespace Projeto_Xadrez.Chess
 
         }
 
-        public override bool[,] PossibleMovements()
+        public override bool[,] PossibleMovements() 
         {
             bool[,] mat = new bool[GameBoard.Lines, GameBoard.Columns];
 
             Position position = new Position(0, 0);
 
-            // Above
+            // ACIMA
             position.DefineValues(Position.Line - 1, Position.Column);
             if (GameBoard.PositionValid(position) && CanMove(position))
             {
@@ -44,7 +44,7 @@ namespace Projeto_Xadrez.Chess
                 mat[position.Line, position.Column] = true;
             }
 
-            // Right
+            // Direita
             position.DefineValues(Position.Line, Position.Column + 1);
             if (GameBoard.PositionValid(position) && CanMove(position))
             {
@@ -59,7 +59,7 @@ namespace Projeto_Xadrez.Chess
             }
 
 
-            // Below
+            // Abaixo
             position.DefineValues(Position.Line + 1, Position.Column);
             if (GameBoard.PositionValid(position) && CanMove(position))
             {
@@ -74,7 +74,7 @@ namespace Projeto_Xadrez.Chess
             }
 
 
-            // Left
+            // Esquerda
             position.DefineValues(Position.Line, Position.Column - 1);
             if (GameBoard.PositionValid(position) && CanMove(position))
             {
